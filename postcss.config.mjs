@@ -1,16 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  basePath: '/kamila-portfolio',
-  images: {
-    unoptimized: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
   },
 };
-
-export default nextConfig;
