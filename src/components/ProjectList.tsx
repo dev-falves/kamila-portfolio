@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 interface Project {
   id: number;
@@ -10,37 +11,34 @@ interface Project {
   image: string;
 }
 
-// Prefix de produção para o GitHub Pages
-const basePath = process.env.NODE_ENV === 'production' ? '/kamila-portfolio' : '';
-
 const projects: Project[] = [
   {
     id: 1,
     title: 'FortPeat 2025',
     year: '2025',
     description: 'Gestão operacional do fluxo de acessos e coordenação de credenciamento.',
-    image: '/fortpeat.jpg',
+    image: '/eventos/fortpeat.jpg',
   },
   {
     id: 2,
     title: 'EngLot 2025',
     year: '2025',
     description: 'Supervisão financeira de bar, controle de caixas e atendimento.',
-    image: '/englot.jpg',
+    image: '/eventos/englot.jpg',
   },
   {
     id: 3,
     title: 'BOMA SP 2026',
     year: '2026',
     description: 'Operação e logística para o público e coordenação de credenciamento.',
-    image: '/boma.jpg',
+    image: '/eventos/boma.jpg',
   },
   {
     id: 4,
     title: 'SPFW N58',
     year: '2024',
     description: 'Apoio na recepção VIP, organização de filas e experiência do convidado.',
-    image: '/spfw.jpg',
+    image: '/eventos/spfw.jpg',
   },
 ];
 
@@ -62,16 +60,14 @@ export default function ProjectList() {
             key={project.id}
             className="flex items-start gap-3 p-3 rounded-2xl bg-neutral-800/40 border border-neutral-800 hover:border-neutral-700/80 transition-all group"
           >
-            {/* Imagem do Projeto com caminho ajustado para o GitHub Pages */}
             <div className="w-14 h-14 rounded-xl overflow-hidden bg-neutral-800 flex-shrink-0 border border-neutral-700/50 relative">
-              <img
-                src={`${basePath}${project.image}`}
+              <Image
+                src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  // Fallback visual caso o arquivo de imagem não seja encontrado na pasta public
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
+                fill
+                sizes="56px"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                unoptimized
               />
             </div>
 
