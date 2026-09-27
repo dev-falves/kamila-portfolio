@@ -5,7 +5,7 @@ import { Mail, MessageSquare, MapPin, Globe, Sparkles, CheckCircle2 } from 'luci
 import SocialHexagon from '@/components/SocialHexagon';
 import ProjectList from '@/components/ProjectList';
 
-// Carregamento dinâmico do Three.js para evitar problemas de SSR no Next.js
+// Carregamento dinâmico do Three.js sem SSR para evitar erros de renderização no navegador
 const DigitalPass3D = dynamic(() => import('@/components/DigitalPass3D'), {
   ssr: false,
   loading: () => (
