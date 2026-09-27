@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 
 interface Project {
   id: number;
@@ -10,6 +9,9 @@ interface Project {
   description: string;
   image: string;
 }
+
+// Ajuste do caminho base para suportar o subdirectório do GitHub Pages
+const basePath = process.env.NODE_ENV === 'production' ? '/kamila-portfolio' : '';
 
 const projects: Project[] = [
   {
@@ -61,13 +63,10 @@ export default function ProjectList() {
             className="flex items-start gap-3 p-3 rounded-2xl bg-neutral-800/40 border border-neutral-800 hover:border-neutral-700/80 transition-all group"
           >
             <div className="w-14 h-14 rounded-xl overflow-hidden bg-neutral-800 flex-shrink-0 border border-neutral-700/50 relative">
-              <Image
-                src={project.image}
+              <img
+                src={`${basePath}${project.image}`}
                 alt={project.title}
-                fill
-                sizes="56px"
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                unoptimized
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
 
