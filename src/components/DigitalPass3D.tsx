@@ -8,8 +8,9 @@ import * as THREE from 'three';
 function BadgeCard() {
   const groupRef = useRef<THREE.Group>(null);
   
-  // Carrega a imagem da pasta public/foto-kamila.jpg como textura 3D
-  const avatarTexture = useTexture('/foto-kamila.jpg');
+  // Ajuste do caminho base para suportar o subdiretório do GitHub Pages
+  const basePath = process.env.NODE_ENV === 'production' ? '/kamila-portfolio' : '';
+  const avatarTexture = useTexture(`${basePath}/foto-kamila.jpg`);
 
   useFrame((state) => {
     if (!groupRef.current) return;
@@ -128,7 +129,7 @@ export default function DigitalPass3D() {
           <BadgeCard />
         </Suspense>
       </Canvas>
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center text-xs text-neutral-400 bg-neutral-900/80 px-3 py-1 rounded-full border border-neutral-800 pointer-events-none">
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center text-xs text-neutral-400 bg-neutral-900/80 px-3 py-1 rounded-full border border-neutral-800 pointer-events-none z-10">
         🖱️ Mova o mouse para interagir
       </div>
     </div>
