@@ -19,28 +19,28 @@ const projects: Project[] = [
     title: 'FortPeat 2025',
     year: '2025',
     description: 'Gestão operacional do fluxo de acessos e coordenação de credenciamento.',
-    image: '/eventos/fortpeat.jpg',
+    image: '/eventos/fortpeat-2025.jpg',
   },
   {
     id: 2,
     title: 'EngLot 2025',
     year: '2025',
     description: 'Supervisão financeira de bar, controle de caixas e atendimento.',
-    image: '/eventos/englot.jpg',
+    image: '/eventos/englot-2025.jpg',
   },
   {
     id: 3,
     title: 'BOMA SP 2026',
     year: '2026',
     description: 'Operação e logística para o público e coordenação de credenciamento.',
-    image: '/eventos/boma.jpg',
+    image: '/eventos/boma-sp-2026.jpg',
   },
   {
     id: 4,
-    title: 'SPFW N58',
+    title: 'Random Play Dance',
     year: '2024',
     description: 'Apoio na recepção VIP, organização de filas e experiência do convidado.',
-    image: '/eventos/spfw.jpg',
+    image: '/eventos/random-play-dance.jpg',
   },
 ];
 
